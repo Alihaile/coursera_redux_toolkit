@@ -10,6 +10,20 @@ const ShoppingCart = () => {
 
     const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
     
+    
+  const handleRemoveItem = itemId => {
+    dispatch(removeItemFromCart(itemId));
+  };
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+  const handleIncreaseQuantity = itemId => {
+    dispatch(increaseItemQuantity(itemId));
+  };
+  const handleDecreaseQuantity = itemId => {
+    dispatch(decreaseItemQuantity(itemId));
+  };
+  
   return (
     <>
     <div className="shopping-cart">
